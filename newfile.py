@@ -1,57 +1,56 @@
-print('Welcome to AskPython Quiz')
-answer=input('Are you ready to play the Quiz ? (yes/no) :')
-score=0
-total_questions=3
- 
-if answer.lower()=='yes':
-    answer=input('Level 1: Give 1 example of conditional statement:')
-    if answer.lower()=='if' or 'elif' or 'if-else' or 'else' or 'nested if':
-        score += 1
-        print('CORRECT!')
+print("Welcome to Phinma-COC Bank")
+username = input("Enter Your Name: ")
+pinnun = 1234
+total_money = 10000
+pin = int(input("Please Enter Four Digit Pin: "))
+if pin != pinnun:
+    print("Wrong Pin Number")
+else:
+    useraw = input("[d]Deposit or [w]Withdraw: ")
+    if useraw == "d":
+        userdep = float(input("Please Enter the Amount You Would Like to Deposit: "))
+        dep = float(input("Please Retype The Amount For Confirmation: "))
+        print(userdep, " Pesos Have Been Deposited Into Your Account")
+        sum1 = dep + total_money
+        print("Would You Like To Have a Receipt?")
+        userrec = input("[y]Yes or [n]No:")
+        if userrec == "y":
+            print("____________________________")
+            print("Phinma-COC Bank")
+            print("____________________________")
+            print("Customer Name: ", username)
+            print("Card Number XXXXXXXXXX54")
+            print("Deposited: ", dep)
+            print("Withdrawn: 0.0")
+            print("New Balance: ", sum1 )
+            print("______________________________")
+
+
+
+
+    elif useraw == "w":
+        userin = float(input("Please Enter The Amount of Money You Would to Withdraw: "))
+        wit = float(input("Please Retype The Amount For Confirmation: "))
+        if userin > total_money:
+            print("Insufficient Amount")
+        elif userin <= total_money:
+            print(userin, " Pesos Have Been Withdrawn From Your Account")
+            diff1 = total_money - wit 
+            print("Would You Like To Have a Receipt?")
+            userrec = input("[y]Yes or [n]No:")
+            if userrec == "y":
+                print("____________________________")
+                print("Phinma-COC Bank")
+                print("____________________________")
+                print("Customer Name: ", username)
+                print("Card Number XXXXXXXXXX54")
+                print("Deposited: 0.0")
+                print("Withdrawn: ", wit)
+                print("New Balance: ", diff1)
+                print("______________________________")
+
+
+
+
     else:
-        print('WRONG ANSWER 🙁')
- 
- 
-    answer=input('Level 2: Symbol of an "Less than or equal to? ')
-    if answer.lower()=='<=':
-        score += 1
-        print('CORRECT!')
-    else:
-        print('WRONG ANSWER 🙁')
-        
-        
-    answer=input('Level 3: Symbol of an "Greater than or equal to? ')
-    if answer.lower()=='>=':
-        score += 1
-        print('CORRECT')
-    else:
-        print('WRONG ANSWER 🙁')
-        
-    
-    answer=input('Level 4: Symbol of an "Greater than? ')
-    if answer.lower()=='>':
-        score += 1
-        print('COORECT')
-    else:
-        print('WRONG ANSWER 🙁')
-        
-        
-    answer=input('Level 5: Symbol of an " Not equal? ')
-    if answer.lower()=='!=':
-        score += 1
-        print('CORRECT')
-    else:
-         print('WRONG ANSWER 🙁')
-        
-        
-    answer=input('Level 6: Since a is 10 and b is 100, what is the output of;        print ("YOU") if a>b else print ("AND") if a==b else print ("ME")?')
-    if answer.lower()=='me' or 'ME':
-        score += 1
-        print('CORRECT!')
-    else:
-        print('Wrong Answer 🙁')
- 
-print('Thankyou for Playing this small quiz game, you attempted',score,"questions correctly!")
-mark=(score/total_questions)*100
-print('Marks obtained:',mark)
-print('BYE!')
+        print("Invalid Keyword")
